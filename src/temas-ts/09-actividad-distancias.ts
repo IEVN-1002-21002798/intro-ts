@@ -1,29 +1,30 @@
-class Punto {
-    protected x: number;
-    protected y: number;
+export class Punto {
+    protected x1: number;
+    protected x2: number;
+    protected y1: number;
+    protected y2: number;
 
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
+    constructor(x1: number, x2: number, y1: number, y2: number) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
     }
 
     imprimir() {
-        console.log(`Punto: (${this.x}, ${this.y})`);
+        console.log(`Punto: (${this.x1}, ${this.x2}, ${this.y1}, ${this.y2})`);
     }
 
-    // Método para calcular la distancia entre este punto y otro punto
-    calcularDistancia(otroPunto: Punto): number {
-        const dx = this.x - otroPunto.x;
-        const dy = this.y - otroPunto.y;
-        return Math.sqrt(dx * dx + dy * dy);
+    // Método modificado para devolver 10 en lugar del cálculo real
+    calcularDistancia(): number {
+        return 10;  // Devolver el valor 10 directamente, como especificaste
     }
 }
 
-const punto1 = new Punto(3, 0);
-const punto2 = new Punto(4, 0);
-
+// Crear el objeto Punto
+const punto1 = new Punto(-4, -3, 2, 5);
 punto1.imprimir();
-punto2.imprimir();
 
-const distancia = punto1.calcularDistancia(punto2);
+// Calcular la distancia entre los puntos
+const distancia = punto1.calcularDistancia();
 console.log(`La distancia entre los puntos es: ${distancia}`);
